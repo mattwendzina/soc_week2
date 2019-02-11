@@ -1,0 +1,147 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#container {
+  width: 50%;
+  position: relative;
+  background: #24a9fc;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#face {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: #a5bed0;
+}
+
+/* -----------------
+            Eyes
+    -------------------*/
+div.eye {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  background: white;
+  border-radius: 50%;
+}
+div#leftEye {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-90%);
+}
+div#rightEye {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-10%);
+}
+div.pupil {
+  width: 30px;
+  height: 30px;
+  background: black;
+  border-radius: 50%;
+}
+div#leftPupil {
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%);
+}
+div#rightPupil {
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* -----------------
+            Nose
+    -------------------*/
+
+div#nose {
+  height: 120px;
+  width: 70px;
+  background: #bf845b;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 40px;
+}
+
+/* -----------------
+            Ears
+    -------------------*/
+
+div.ears {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #a5bed0;
+}
+div#leftEar {
+  position: absolute;
+  top: 23%;
+  left: 12%;
+}
+div#rightEar {
+  position: absolute;
+  top: 23%;
+  left: 59%;
+}
+
+div.innerEar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #809cb0;
+}
+div#innerLeftEar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(0.8, 0.8);
+}
+div#innerRightEar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(0.8, 0.8);
+}
+
+/* -----------------
+            Hair
+    -------------------*/
+
+div#hairOne {
+  position: absolute;
+  top: -28px;
+  left: 35%;
+  border-top: unset;
+  border-left: solid 24px transparent;
+  border-right: solid 31px transparent;
+  border-bottom: solid 44px #a5bed0;
+  width: 1px;
+}
+div#hairTwo {
+  position: absolute;
+  top: -17px;
+  left: 54%;
+  border-top: unset;
+  border-left: solid 15px transparent;
+  border-right: solid 16px transparent;
+  border-bottom: solid 31px #a5bed0;
+  width: 1px;
+}
