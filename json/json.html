@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    html {
+      font-family: "Pacifico", cursive;
+    }
+
+    body {
+      background-image: url(../images/theSimpsons.jpg);
+      background-repeat: repeat;
+      background-size: cover;
+      height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      font-size: 60px;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      list-style-type: none;
+      width: 500px;
+      height: 500px;
+      background: lightblue;
+      margin: 2.5px;
+      display: flex;
+      flex: 0 18%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+
+    li img {
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+    }
+  </style>
+
+  <body>
+    <h1>The Simpsons</h1>
+    <button onclick="showCharacterInfo()">Show Character</button>
+    <ul id="container"></ul>
+
+    <script>
+      /*------------------------
+             Fetching an API
+        ---------------------- */
+      function showCharacterInfo() {
+        fetch("https://thesimpsonsquoteapi.glitch.me/quotes")
+          .then(response => response.json())
+          .then(function(data) {
+            console.log(data);
+            const container = document.getElementById("container");
+            const newCharacter = document.createElement("li");
+            data.map(function(item) {
+              newCharacter.innerHTML += `${item.character} <img src= ${
+                item.image
+              }> ${item.quote}`;
+            });
+            container.appendChild(newCharacter);
+          });
+      }
+
+      //   fetch("https://thesimpsonsquoteapi.glitch.me/quotes")
+      //     .then(response => response.json())
+      //     .then(function(json) {
+      //       console.log(json);
+      //       var title = document.getElementById("title");
+      //       title.innerHTML = `title : ${json[0].quote}`;
+      //     });
+      /* --------------------------------
+                Storing an API
+        -------------------------------- */
+      //   var body = JSON.stringify({
+      //     title: "foo",
+      //     body: "bar",
+      //     userID: 1
+      //   });
+
+      //   var options = {
+      //     method: "POST",
+      //     body: body,
+      //     headers: {
+      //       "Content-type": "application/json; charset=UTF-8"
+      //     }
+      //   };
+
+      //   fetch("https://jsonplaceholder.typicode.com/posts/2", options)
+      //     .then(response => response.json())
+      //     .then(function(data) {
+      //       console.log(data);
+      //     });
+    </script>
+  </body>
+</html>
