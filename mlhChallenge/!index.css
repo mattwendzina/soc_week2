@@ -1,0 +1,66 @@
+#container {
+  display: flex;
+  height: 100vh;
+}
+
+#left-container,
+#right-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 50%;
+}
+
+#left-container {
+  background: rgb(13, 175, 230);
+}
+
+#left-container.element {
+  position: relative;
+  margin: 25px;
+  color: white;
+}
+
+#left-container#element1 img {
+  position: absolute;
+  left: -20px;
+}
+
+#left-container#element2 img {
+  position: absolute;
+  left: -20px;
+}
+
+#left-container#element3 img {
+  position: absolute;
+  left: -20px;
+}
+
+#right-container.element {
+  margin: 25px;
+  color: black;
+}
+
+#right-container#element1 {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f099";
+  font-size: 30px;
+  color: rgb(13, 175, 230);
+  background: rgb(13, 175, 230);
+}
+
+#right-container#element4,
+#right-container#element5 {
+  width: 150px;
+  border-radius: 15px;
+  border: solid 1px rgb(13, 175, 230);
+}
+
+#right-container#element4 {
+  background: rgb(13, 175, 230);
+  color: white;
+}
+#right-container#element5 {
+  color: rgb(13, 175, 230);
+}

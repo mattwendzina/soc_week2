@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="!index.css" />
+    <!-- <script src="main.js"></script> -->
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    #container {
+      display: flex;
+      height: 100vh;
+      /* flex-direction: column; */
+    }
+
+    #left-container,
+    #right-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 50%;
+      flex-direction: column;
+    }
+
+    #left-container {
+      background: rgb(13, 175, 230);
+    }
+
+    #left-container.element {
+      position: relative;
+      margin: 25px;
+      color: white;
+    }
+
+    #left-container #element1 img {
+      position: absolute;
+      left: 200px;
+      width: 50px;
+    }
+
+    #left-container #element2 img {
+      position: absolute;
+      left: 200px;
+      width: 50px;
+    }
+
+    #left-container #element3 img {
+      position: absolute;
+      left: 200px;
+      width: 50px;
+    }
+
+    #right-container.element {
+      margin: 25px;
+      color: black;
+    }
+
+    #right-container #element1::before {
+      font-family: "Font Awesome 5 Brands";
+      font-weight: 900;
+      position: absolute;
+      top: 100px;
+      right: 389px;
+      content: "\f099";
+      font-size: 30px;
+      color: rgb(13, 175, 230);
+      width: 150px;
+      text-align: left;
+    }
+
+    #right-container #element4,
+    #right-container #element5 {
+      width: 150px;
+      border-radius: 15px;
+      border: solid 1px rgb(13, 175, 230);
+    }
+
+    #right-container #element4 {
+      background: rgb(13, 175, 230);
+      color: white;
+    }
+    #right-container #element5 {
+      color: rgb(13, 175, 230);
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="left-container">
+        <div class="element" id="element1">
+          <img src="images/magnifyingGlass.png" />
+          <p>Follow your interests</p>
+        </div>
+        <div class="element" id="element2">
+          <img src="images/people.png" />
+          <p>Hear what people are talking about</p>
+        </div>
+        <div class="element" id="element3">
+          <p>Join the conversation</p>
+          <img src="images/speechBubble.png" />
+        </div>
+      </div>
+      <div id="right-container">
+        <div class="element" id="element1"></div>
+        <h3 class="element" id="element2">
+          <p>See what's happening in the world right now</p>
+        </h3>
+        <h5 class="element" id="element3">Join Twitter Today</h5>
+        <div class="element" id="element4">Sign up</div>
+        <div class="element" id="element5">Log in</div>
+      </div>
+    </div>
+  </body>
+</html>

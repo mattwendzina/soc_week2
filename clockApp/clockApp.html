@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Clock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<style>
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #clockFace {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    border: solid 5px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hands {
+    position: absolute;
+    top: 50%;
+    height: 220px;
+    transform-origin: bottom;
+    /* transition: 500ms ease-in-out; */
+  }
+
+  #secondHand {
+    border: solid 1px black;
+    transform: translate(0, -100%) rotate(0deg);
+  }
+
+  #minuteHand {
+    border: solid 2px black;
+    transform: translate(0, -100%) rotate(0deg);
+  }
+
+  #hourHand {
+    border: solid 4px black;
+    transform: translate(0, -100%) rotate(0deg);
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div id="clockFace">
+      <div class="hands" id="secondHand"></div>
+      <div class="hands" id="minuteHand"></div>
+      <div class="hands" id="hourHand"></div>
+    </div>
+  </div>
+
+  <script>
+    function runClock() {
+      const SECONDHAND = document.getElementById("secondHand");
+      const MINUTEHAND = document.getElementById("minuteHand");
+      const HOURHAND = document.getElementById("hourHand");
+
+      var date = new Date();
+      let hr = date.getHours();
+      let min = date.getMinutes();
+      let sec = date.getSeconds();
+
+      let hrPosition = (hr * 360) / 12 + (min * (360 / 60) / 12);
+      let minPosition = (min * 360 / 60) + (sec * (360 / 60) / 60);
+      let secPosition = (sec * 360) / 60;
+
+      SECONDHAND.style.transform = `translate(0, -100%) rotate(${secPosition}deg)`;
+      MINUTEHAND.style.transform = `translate(0, -100%) rotate(${minPosition}deg)`;
+      HOURHAND.style.transform = `translate(0, -100%) rotate(${hrPosition}deg)`;
+    }
+
+    setInterval(runClock, 1000)
+
+      //   setInterval(function() {
+      //     // debugger;
+      //     if (secPosition < 60) {
+      //       secPosition++;
+      //       SECONDHAND.style.transform = `translate(0, -100%) rotate(${secPosition *
+      //         6}deg)`;
+      //     } else if (minPosition < 60) {
+      //       secPosition = 0;
+      //       SECONDHAND.style.transform = `translate(0, -100%)`;
+      //       minPosition++;
+      //       MINUTEHAND.style.transform = `translate(0, -100%) rotate(${minPosition *
+      //         6}deg)`;
+      //       secPosition++;
+      //       SECONDHAND.style.transform = `translate(0, -100%) rotate(${secPosition *
+      //         6}deg)`;
+      //     } else if (hrPosition < 60) {
+      //       secPosition = 0;
+      //       SECONDHAND.style.transform = `translate(0, -100%) rotate(${secPosition}deg)`;
+      //       minPosition = 0;
+      //       MINUTEHAND.style.transform = `translate(0, -100%) rotate(${minPosition}deg)`;
+      //       hrPosition++;
+      //       HOURHAND.style.transform = `translate(0, -100%) rotate(${hrPosition *
+      //         30}deg)`;
+      //     } else {
+      //       secPosition = 0;
+      //       SECONDHAND.style.transform = `translate(0, -100%)`;
+      //       minPosition = 0;
+      //       MINUTEHAND.style.transform = `translate(0, -100%)`;
+      //       hrPosition = 0;
+      //       HOURHAND.style.transform = `translate(0, -100%)`;
+      //     }
+
+      //     console.log(degree);
+      //   }, 1000);
+  </script>
+</body>
+
+</html>

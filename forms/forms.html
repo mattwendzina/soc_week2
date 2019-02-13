@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <!--------------------------------
+    Method for handling with just HTML 
+    ---------------------------------->
+    <!-- <form method="GET">
+      <fieldset>
+        <legend>Form with Get method and no JS</legend>
+        <label for="input1"> Enter first name </label>
+        <input type="text" name="input1" />
+        <label for="input2"> Enter last name </label>
+        <input type="text" name="input2" />
+        <label for="input3"> Your age </label>
+        <input type="text" name="input3" />
+
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form> -->
+
+    <!--------------------------------
+        Method for handling with JS
+    ---------------------------------->
+
+    <!--  Work on how you would extract information from all three inputs -->
+
+    <form onsubmit="handleFormSubmit(event)">
+      <fieldset>
+        <legend>JS function preventing the form</legend>
+        <label> input1 </label> <input type="text" name="input" />
+        <label> input2 </label> <input type="text" name="input" />
+        <label> input3 </label> <input type="text" name="input" />
+        <button type="submit"></button>
+      </fieldset>
+    </form>
+
+    <script>
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        console.log({ event });
+      }
+    </script>
+  </body>
+</html>
